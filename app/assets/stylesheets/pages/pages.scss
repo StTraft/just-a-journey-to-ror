@@ -5,17 +5,36 @@
 // import dependency
 @import "base/base";
 
-@mixin colortest($c) {
-	background: $c;
+//@mixin colortest($c) {
+//	background: $c;
+//}
+//@for $i from 1 through length($colours) {
+//	.colour_#{$i} {
+//		@include colortest(nth($colours, $i));
+//		height: 100px;
+//		text-align: center;
+//		p {
+//			vertical-align: middle;
+//		}
+//	}
+//} 
+body {
+	min-height: 100%;
+	width: 100%;
+	background: $bkg_color;
+	color: $font;
+
 }
-@for $i from 1 through length($colours) {
-	.colour_#{$i} {
-		@include colortest(nth($colours, $i));
-		height: 100px;
-		text-align: center;
-		p {
-			vertical-align: middle;
-		}
-	}
+
+header {
+	background: $head_color;
+	color: $head_font;
+	width: 100%;
+	height: 200px;
+}
+
+main {
+
+	
 }
 	

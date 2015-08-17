@@ -5,20 +5,17 @@
 @import "font-awesome";
 
 // color defination ##
-$colours: rgb(97, 236, 247),rgb(117,192,211),rgb(5,203,238),
-					rgb(2,132,167),rgb(2,103,130),
-					  	
-					rgb(169,167,206), 	
-					rgb(142,117,145), 	
-					rgb(102,77,105),
-
-					rgb(225,225,225), 		
-					rgb(100,100,100),  	
-					rgb(122,122,122), 	
-						
-
-					rgb(255,210,122), 
-					rgb(229,77,70);
+$colours: 	rgb(97, 236, 247),	rgb(117,192,211),	rgb(5,203,238),
+			rgb(2,132,167),		rgb(2,103,130),		rgb(169,167,206), 	
+			rgb(142,117,145),	rgb(102,77,105),	rgb(225,225,225),
+			rgb(100,100,100),  	rgb(122,122,122), 	
+			rgb(255,210,122),	rgb(229,77,70);
+$bkg_color: rgb(225,225,225);
+$head_color: rgb(5,203,238);
+$head_font: rgb(227,230,237);
+$btn_bkg: rgb(5,203,238);
+$btn_color: rgb(5,203,238);
+$font: rgb(100,100,100);
 
 // $grad_green: linear-gradient(to top, rgb(42,89,87), rgb(85,144,141)), 
 // $grad_blue: linear-gradient(to top, rgb(42,67,89), rgb(85,119,144)), 

@@ -1,5 +1,14 @@
-%h1 This is index page.
-.row
-  - (1..18).each do |i|
-    .col-md-2{style: "background: \$c#{i}", class: "colour_#{i}"}
-      %p #{i}
+-#
+  %h1 This is index page.
+  .row
+    - (1..18).each do |i|
+      .col-md-2{style: "background: \$c#{i}", class: "colour_#{i}"}
+        %p #{i}
+%header
+  .row
+    .col-xs-12
+      %h1 This is header
+%main
+  .row
+    .col-md-12
+      %h1 This is main
