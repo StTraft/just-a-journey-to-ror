@@ -1,1 +1,41 @@
-//
+// import pre-required files here
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// color defination ##
+$colours: rgb(97, 236, 247),rgb(117,192,211),rgb(5,203,238),
+					rgb(2,132,167),rgb(2,103,130),
+					  	
+					rgb(169,167,206), 	
+					rgb(142,117,145), 	
+					rgb(102,77,105),
+
+					rgb(225,225,225), 		
+					rgb(100,100,100),  	
+					rgb(122,122,122), 	
+						
+
+					rgb(255,210,122), 
+					rgb(229,77,70);
+
+// $grad_green: linear-gradient(to top, rgb(42,89,87), rgb(85,144,141)), 
+// $grad_blue: linear-gradient(to top, rgb(42,67,89), rgb(85,119,144)), 
+// $grad_red: linear-gradient(to top, rgb(89,42,42), rgb(144,85,85))
+
+// skyblue			1// blue					2// light blue		3
+// light grey		4
+
+// vin purple		5
+// bir purple		6
+// deep burple	7
+
+// def color 		8
+
+// ?						9
+// dark gold		10	
+// dark blue		11
+// chevron			12
+// gold					13
+// alert				14

@@ -1,1 +1,21 @@
-//
+// Place all the styles related to the Companies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// import dependency
+@import "base/base";
+
+@mixin colortest($c) {
+	background: $c;
+}
+@for $i from 1 through length($colours) {
+	.colour_#{$i} {
+		@include colortest(nth($colours, $i));
+		height: 100px;
+		text-align: center;
+		p {
+			vertical-align: middle;
+		}
+	}
+}
+	
