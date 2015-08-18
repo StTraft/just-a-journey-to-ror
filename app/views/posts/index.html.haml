@@ -1,14 +1,34 @@
--#
+-# check color 
   %h1 This is index page.
   .row
     - (1..18).each do |i|
       .col-md-2{style: "background: \$c#{i}", class: "colour_#{i}"}
         %p #{i}
-%header
-  .row
-    .col-xs-12
-      %h1 This is header
+.background-image.hidden-xs
+  = image_tag 'lake.jpg', class: 'img img-responsive'
+  .overlay
+.background-xs.visible-xs
 %main
-  .row
-    .col-md-12
-      %h1 This is main
+  .container-fluid
+    .row
+      .col-md-7.col-xs-12
+        .article-area
+          %h1 OVER THE HILLS & FAR AWAY
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh. Donec tincidunt lectus sit amet libero placerat consectetur nec euismod justo. Ut ut ultricies ipsum, sed malesuada lacus. Donec eget orci sed leo condimentum sollicitudin id eu metus. Maecenas eget feugiat ipsum, vitae posuere mauris. Pellentesque diam sem, rutrum at ligula in, convallis malesuada dui. 
+      .col-md-5.col-xs-12.no-gutter
+        .feature-image
+          .circle
+            = image_tag 'head01.jpg'
+%footer
+  .container-fluid
+    %row.heading
+      .col-md-12
+        %p proudly presented to you by Gordon Yip, &copy 2015.
+
+-#
+  .row.container-fluid
+    .col-md-12.image
+      = image_tag 'lake.jpg', class: 'img img-responsive'
+      .overlay
+        %h1 OVER THE HILLS & FAR AWAY
+        %p EMERALD MORAINE LAKE, ALBERTA, CANADA

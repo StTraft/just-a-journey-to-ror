@@ -15,24 +15,38 @@ $head_color: rgb(5,203,238);
 $head_font: rgb(227,230,237);
 $btn_bkg: rgb(5,203,238);
 $btn_color: rgb(5,203,238);
+
+// breadcrumb
+$bkg_black: rgb(37,43,52);
 $font: rgb(100,100,100);
+$overlay_trans: rgba(37,43,52,.5);
+$font_grey: rgb(71,78,87);
+$font_white: rgb(253,254,252);
 
-// $grad_green: linear-gradient(to top, rgb(42,89,87), rgb(85,144,141)), 
-// $grad_blue: linear-gradient(to top, rgb(42,67,89), rgb(85,119,144)), 
-// $grad_red: linear-gradient(to top, rgb(89,42,42), rgb(144,85,85))
+.no-gutter[class*='col-'] {
+	padding-left: 0;
+	padding-right: 0;
 
-// skyblue			1// blue					2// light blue		3
-// light grey		4
-
-// vin purple		5
-// bir purple		6
-// deep burple	7
-
-// def color 		8
-
-// ?						9
-// dark gold		10	
-// dark blue		11
-// chevron			12
-// gold					13
-// alert				14
+}
+@mixin effect-func ($func) {
+	-webkit-filter: $func;
+	-moz-filter: $func;
+	-o-filter: $func;
+	filter: $func;
+}
+@mixin circle ($d) {
+	margin: auto;
+	width: $d;
+	height: $d;
+	overflow: hidden;
+	vertical-align: middle;
+	border: {
+		style: solid;
+		radius: 50%;
+		width: 4px;
+		color: $btn_bkg;
+	}
+	img {
+		width: 100%;
+	}
+}
