@@ -19,6 +19,9 @@
 //	}
 //} 
 body {
+	font-family: 'Roboto';
+	letter-spacing: 2px;
+	line-height: 1.8;
 	width: 100%;
 	min-height: 1000px;
 	background: $bkg_black;
@@ -100,7 +103,7 @@ header {
 		z-index: -1;
 	}
 }
-.article-area {
+.caption {
 	@media screen and (max-width: 991px) {
 		padding-top: 9vw;
 	}
@@ -118,6 +121,21 @@ header {
 		text-align: justify;
 	}
 
+}
+main {
+	background: $bkg_black;
+	.post-title {
+		h1 {
+			font-size: 48px;
+			text-align: center;
+		}
+	}
+	.post-content {
+		p {
+			font-size: 18px;
+			text-align: justify;
+		}
+	}
 }
 footer {
 	bottom: 0;

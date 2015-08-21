@@ -4,25 +4,13 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Myblog
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Roboto:500', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      %nav.navbar.navbar-inverse
-        .container-fluid
-          .navbar-header
-            %button.navbar-toggle.collapsed{type: 'button', :"aria-expanded" => false, data: {toggle: 'collapse', target: '#nav_head'}}
-              %span.sr-only Toggle nav
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %h4 Brand
-          .collapse.navbar-collapse#nav_head
-            %ul.nav.navbar-nav
-              %li
-                = link_to 'Blog', ''
-              %li
-                = link_to 'Photo', ''
-              %li
-                = link_to 'About', ''
+    = render 'layouts/header'
+    = render 'layouts/caption'
     = yield
+    = render 'layouts/footer'
+
+    
