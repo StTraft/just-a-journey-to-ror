@@ -4,17 +4,16 @@
     - (1..18).each do |i|
       .col-md-2{style: "background: \$c#{i}", class: "colour_#{i}"}
         %p #{i}
-.background-image.hidden-xs
+.background-image
   = image_tag 'lake.jpg', class: 'img img-responsive'
   .overlay
-.background-xs.visible-xs
 %main
   .container-fluid
     .row
       .col-md-7.col-xs-12
         .article-area
           %h1 OVER THE HILLS & FAR AWAY
-          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh. Donec tincidunt lectus sit amet libero placerat consectetur nec euismod justo. Ut ut ultricies ipsum, sed malesuada lacus. Donec eget orci sed leo condimentum sollicitudin id eu metus. Maecenas eget feugiat ipsum, vitae posuere mauris. Pellentesque diam sem, rutrum at ligula in, convallis malesuada dui. 
+          %p.hidden-xs Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh. 
       .col-md-5.col-xs-12.no-gutter
         .feature-image
           .circle
