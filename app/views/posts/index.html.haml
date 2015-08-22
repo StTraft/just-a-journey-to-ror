@@ -10,9 +10,9 @@
       .col-xs-12.col-md-10.col-md-push-1
         .post
           .post-title
-            %h1 This is the Post Title
+            %h1= @post.title
           .post-content
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh.
+            %p= simple_format @post.content
 -#
   .row.container-fluid
     .col-md-12.image

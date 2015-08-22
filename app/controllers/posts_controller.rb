@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+		@post = Post.first
 	end
 
 	def show
+
 	end
 
 	def edit
