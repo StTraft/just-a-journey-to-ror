@@ -1,0 +1,12 @@
+%main
+  .container-fluid
+    .row
+      .col-xs-12.col-md-10.col-md-push-1
+        .post
+          %h1 Edit Post No. #{@post.id}
+          %p.notice
+          %p.alert
+          = simple_form_for @post, as: :post, url: '#', method: :put, remote: true do |f|
+            = f.input :title, label: 'Post Title', placeholder: 'Title here'
+            %br
+            = f.input :content, as: :text, label: 'Content', placeholder: 'Content', input_html: {rows: 20}
