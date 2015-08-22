@@ -124,18 +124,31 @@ header {
 }
 main {
 	background: $bkg_black;
-	.post-title {
-		h1 {
-			font-size: 48px;
-			text-align: center;
+	.post {
+		width: 100%;
+		@media screen and (min-width: 992px) {
+			padding: 75px;
+			padding-top: 150px;
+		}
+		@media screen and (max-width: 992px) {
+			padding: 20px;
+		}
+		.post-title {
+			h1 {
+				margin-top: 5px;
+				margin-bottom: 25px;
+				font-size: 48px;
+				text-align: center;
+			}
+		}
+		.post-content {
+			p {
+				font-size: 18px;
+				text-align: justify;
+			}
 		}
 	}
-	.post-content {
-		p {
-			font-size: 18px;
-			text-align: justify;
-		}
-	}
+	
 }
 footer {
 	bottom: 0;
