@@ -8,9 +8,15 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		@post = Post.first
 	end
 
+		
 	def update
+		@post = Post.find_by(params[:id])
+		@post.assign_attributes title: params[:title] 
+		@post.assign_attributes content: params[:content]
+		@post.save
 	end
 
 	def new
@@ -21,4 +27,9 @@ class PostsController < ApplicationController
 
 	def destroy
 	end
+
+	private
+		def get_param
+			params.require(:post).permit([:title, :content])
+		end
 end

@@ -40,6 +40,13 @@ header {
 		margin-bottom: 0;
 		&-header {
 			h4 {margin: 15px;}
+			a {
+				color: $font_white;
+				&:hover {
+					color: $btn_color;
+					text-decoration: none;
+				}
+			}
 		}
 		button {
 			border-width: 0;
