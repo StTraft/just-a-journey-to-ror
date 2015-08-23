@@ -33,6 +33,9 @@ gem 'devise', '~> 3.4.0'
 #editing
 gem 'simple_form'
 
+#image
+gem 'paperclip', '~> 4.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
