@@ -1,9 +1,11 @@
 class AddResourceColumnsToPhotos < ActiveRecord::Migration
-  def up
-  	add_attachment :photos, :resource
+  def self.up
+  	change_table :photos do |t|
+  		t.attachment :resource
+  	end
   end
 
-  def down
+  def self.down
   	remove_attachment :photos, :resource
   end
 end

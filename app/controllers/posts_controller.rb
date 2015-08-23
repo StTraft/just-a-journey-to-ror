@@ -13,9 +13,9 @@ class PostsController < ApplicationController
 
 		
 	def update
-		@post = Post.find_by(params[:id])
-		@post.assign_attributes title: params[:title] 
-		@post.assign_attributes content: params[:content]
+		@post = Post.first
+		@post.assign_attributes title: params[:post][:title] 
+		@post.assign_attributes content: params[:post][:content]
 		@post.save
 	end
 

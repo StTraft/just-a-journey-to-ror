@@ -8,7 +8,6 @@
 Master.destroy_all
 Post.destroy_all
 Album.destroy_all
-Photo.destroy_all
 
 Master.create(email: 'master@gordonian.com', password: 'mastergordon!7149')
 Post.create(title: 'This is the title', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh.
