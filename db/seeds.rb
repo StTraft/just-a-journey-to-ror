@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Master.destroy_all
 Post.destroy_all
+Photo.destroy_all
 Album.destroy_all
 
 Master.create(email: 'master@gordonian.com', password: 'mastergordon!7149')
