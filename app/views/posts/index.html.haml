@@ -11,6 +11,7 @@
         .post
           .post-title
             %h1= @post.title
+            %small= @post.subtitle
           .post-content
             %p= simple_format @post.content
 -#
