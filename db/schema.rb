@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810102601) do
+ActiveRecord::Schema.define(version: 20150825143312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "masters", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +40,19 @@ ActiveRecord::Schema.define(version: 20150810102601) do
   add_index "masters", ["email"], name: "index_masters_on_email", unique: true, using: :btree
   add_index "masters", ["reset_password_token"], name: "index_masters_on_reset_password_token", unique: true, using: :btree
 
+  create_table "photos", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "resource_file_name"
+    t.string   "resource_content_type"
+    t.integer  "resource_file_size"
+    t.datetime "resource_updated_at"
+    t.integer  "album_id"
+  end
+
+  add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -42,4 +61,5 @@ ActiveRecord::Schema.define(version: 20150810102601) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "photos", "albums"
 end

@@ -7,11 +7,12 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %h4 Brand
+        = link_to root_path do
+          %h4 GoRdoN
       .collapse.navbar-collapse#nav_head
         %ul.nav.navbar-nav
           %li
-            = link_to 'Blog', ''
+            = link_to 'Blog', posts_edit_path
           %li
             = link_to 'Photo', ''
           %li

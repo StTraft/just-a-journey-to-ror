@@ -40,6 +40,13 @@ header {
 		margin-bottom: 0;
 		&-header {
 			h4 {margin: 15px;}
+			a {
+				color: $font_white;
+				&:hover {
+					color: $btn_color;
+					text-decoration: none;
+				}
+			}
 		}
 		button {
 			border-width: 0;
@@ -118,12 +125,27 @@ header {
 		}
 	}
 	p {
+		letter-spacing: 3px;
+		padding: 3% 10%;
 		text-align: justify;
 	}
 
 }
 main {
 	background: $bkg_black;
+	.heart-container {
+		@media screen and (min-width: 992px) {
+			padding: 75px;
+			padding-top: 150px;
+			padding-bottom: 0;
+		}
+		@media screen and (max-width: 992px) {
+			padding: 20px;
+			padding-bottom: 0;
+		}
+		padding-left: 50% !important;
+		padding-right: 50% !important;
+	}
 	.post {
 		width: 100%;
 		@media screen and (min-width: 992px) {
@@ -151,8 +173,12 @@ main {
 	
 }
 footer {
+	text-align: center;
 	bottom: 0;
 	background: $bkg_black;
 	width: 100%;
 	height: 170px;
+	p {
+		margin-top: 150px;
+	}
 }

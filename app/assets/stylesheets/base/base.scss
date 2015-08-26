@@ -50,3 +50,53 @@ $font_white: rgb(253,254,252);
 		width: 100%;
 	}
 }
+@mixin trans ($func) {
+	-webkit-transform: $func; 
+		 -moz-transform: $func; 
+			-ms-transform: $func; 
+			 -o-transform: $func; 
+					transform: $func; 
+}
+@mixin transit ($func) {
+	-webkit-transition: $func;
+	-moz-transition: $func;
+	-ms-transition: $func;
+	-o-transition: $func;
+	transition: $func;
+}
+@mixin trans-o ($func) {
+	-webkit-transform-origin: $func; 
+		 -moz-transform-origin: $func; 
+			-ms-transform-origin: $func; 
+			 -o-transform-origin: $func; 
+					transform-origin: $func; 	
+}
+.zap {
+	-moz-transform: scale(1, 1) !important;
+	transform: scale(1, 1) !important;
+}
+#heart { 
+	position: relative;
+	left: -50px;
+	width: 100px; 
+	height: 90px;
+	@include trans(scale(2.5, 0));
+	@include transit(transform 0.2s ease-out);
+} 
+#heart:before, #heart:after { 
+	position: absolute; 
+	content: ""; 
+	left: 50px; 
+	top: 0; 
+	width: 50px; 
+	height: 80px; 
+	background: $font_white; 
+	border-radius: 50px 50px 0 0; 
+	@include trans(rotate(-45deg)); 
+	@include trans-o(0 100%); 
+} 
+#heart:after { 
+	left: 0; 
+	@include trans(rotate(45deg));
+	@include trans-o(100% 100%);
+}
