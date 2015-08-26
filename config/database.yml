@@ -26,3 +26,5 @@ test:
 production:
   <<: *default
   database: myblog_pro
+  username: rahsbueoyshfio
+  password: y77HvSQagU7queMHMwAFhRgyhY
