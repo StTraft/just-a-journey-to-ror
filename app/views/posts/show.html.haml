@@ -1,0 +1,9 @@
+%main
+  .container-fluid
+    .row
+      .col-xs-12.col-md-10.col-md-push-1
+        .post
+          .post-title
+            %h1= @post.title
+          .post-content
+            %p= simple_format @post.content

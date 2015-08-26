@@ -1,0 +1,19 @@
+%header
+  %nav.navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{type: 'button', :"aria-expanded" => false, data: {toggle: 'collapse', target: '#nav_head'}}
+          %span.sr-only Toggle nav
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to root_path do
+          %h4 GoRdoN
+      .collapse.navbar-collapse#nav_head
+        %ul.nav.navbar-nav
+          %li
+            = link_to 'Blog', posts_edit_path
+          %li
+            = link_to 'Photo', ''
+          %li
+            = link_to 'About', ''

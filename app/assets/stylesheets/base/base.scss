@@ -1,0 +1,102 @@
+// import pre-required files here
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// color defination ##
+$colours: 	rgb(97, 236, 247),	rgb(117,192,211),	rgb(5,203,238),
+			rgb(2,132,167),		rgb(2,103,130),		rgb(169,167,206), 	
+			rgb(142,117,145),	rgb(102,77,105),	rgb(225,225,225),
+			rgb(100,100,100),  	rgb(122,122,122), 	
+			rgb(255,210,122),	rgb(229,77,70);
+$bkg_color: rgb(225,225,225);
+$head_color: rgb(5,203,238);
+$head_font: rgb(227,230,237);
+$btn_bkg: rgb(5,203,238);
+$btn_color: rgb(5,203,238);
+
+// breadcrumb
+$bkg_black: rgb(37,43,52);
+$font: rgb(100,100,100);
+$overlay_trans: rgba(37,43,52,.5);
+$font_grey: rgb(71,78,87);
+$font_white: rgb(253,254,252);
+
+.no-gutter[class*='col-'] {
+	padding-left: 0;
+	padding-right: 0;
+
+}
+@mixin effect-func ($func) {
+	-webkit-filter: $func;
+	-moz-filter: $func;
+	-o-filter: $func;
+	filter: $func;
+}
+@mixin circle ($d) {
+	margin: auto;
+	width: $d;
+	height: $d;
+	overflow: hidden;
+	vertical-align: middle;
+	border: {
+		style: solid;
+		radius: 50%;
+		width: 4px;
+		color: $btn_bkg;
+	}
+	img {
+		width: 100%;
+	}
+}
+@mixin trans ($func) {
+	-webkit-transform: $func; 
+		 -moz-transform: $func; 
+			-ms-transform: $func; 
+			 -o-transform: $func; 
+					transform: $func; 
+}
+@mixin transit ($func) {
+	-webkit-transition: $func;
+	-moz-transition: $func;
+	-ms-transition: $func;
+	-o-transition: $func;
+	transition: $func;
+}
+@mixin trans-o ($func) {
+	-webkit-transform-origin: $func; 
+		 -moz-transform-origin: $func; 
+			-ms-transform-origin: $func; 
+			 -o-transform-origin: $func; 
+					transform-origin: $func; 	
+}
+.zap {
+	-moz-transform: scale(1, 1) !important;
+	transform: scale(1, 1) !important;
+}
+#heart { 
+	position: relative;
+	left: -50px;
+	width: 100px; 
+	height: 90px;
+	@include trans(scale(2.5, 0));
+	@include transit(transform 0.2s ease-out);
+} 
+#heart:before, #heart:after { 
+	position: absolute; 
+	content: ""; 
+	left: 50px; 
+	top: 0; 
+	width: 50px; 
+	height: 80px; 
+	background: $font_white; 
+	border-radius: 50px 50px 0 0; 
+	@include trans(rotate(-45deg)); 
+	@include trans-o(0 100%); 
+} 
+#heart:after { 
+	left: 0; 
+	@include trans(rotate(45deg));
+	@include trans-o(100% 100%);
+}

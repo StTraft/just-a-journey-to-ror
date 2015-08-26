@@ -1,0 +1,27 @@
+-# check color 
+  %h1 This is index page.
+  .row
+    - (1..18).each do |i|
+      .col-md-2{style: "background: \$c#{i}", class: "colour_#{i}"}
+        %p #{i}
+%main
+  .container-fluid
+    .row
+      .col-xs-12.col-md-12
+        .heart-container
+          #heart
+    .row
+      .col-xs-12.col-md-10.col-md-push-1
+        .post
+          .post-title
+            %h1= @post.title
+            %small= @post.subtitle
+          .post-content
+            %p= simple_format @post.content
+-#
+  .row.container-fluid
+    .col-md-12.image
+      = image_tag 'lake.jpg', class: 'img img-responsive'
+      .overlay
+        %h1 OVER THE HILLS & FAR AWAY
+        %p EMERALD MORAINE LAKE, ALBERTA, CANADA

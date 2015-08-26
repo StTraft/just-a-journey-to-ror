@@ -1,0 +1,184 @@
+// Place all the styles related to the Companies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// import dependency
+@import "base/base";
+
+//@mixin colortest($c) {
+//	background: $c;
+//}
+//@for $i from 1 through length($colours) {
+//	.colour_#{$i} {
+//		@include colortest(nth($colours, $i));
+//		height: 100px;
+//		text-align: center;
+//		p {
+//			vertical-align: middle;
+//		}
+//	}
+//} 
+body {
+	font-family: 'Roboto';
+	letter-spacing: 2px;
+	line-height: 1.8;
+	width: 100%;
+	min-height: 1000px;
+	background: $bkg_black;
+	color: $font_white;
+	overflow-x: hidden;
+	overflow-y: scroll;  
+}
+header {
+	width: 100%;
+	color: $font;
+	.navbar {
+		background-color: rgba($bkg_black, .6);
+		border-radius: 0;
+		border-width: 0;
+		vertical-align: middle;
+		margin-bottom: 0;
+		&-header {
+			h4 {margin: 15px;}
+			a {
+				color: $font_white;
+				&:hover {
+					color: $btn_color;
+					text-decoration: none;
+				}
+			}
+		}
+		button {
+			border-width: 0;
+		}
+	}
+}
+.background-image {
+	position: absolute;
+	padding: 0;
+	width: 102%;
+	height: 95%;
+	top: -5px;
+	left: -5px;
+	z-index: -10;
+	@include effect-func (blur(10px));
+	.overlay {
+		width: 100%;
+		height: 100%;
+		background: $overlay_trans;
+		position: absolute;
+		top: 0px;
+	}
+}
+.background-xs {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+
+	background: nth($colours,2);
+}
+.feature-image {
+	@media screen and (min-width: 992px) {
+		padding-top: 18vw;
+	}
+	@media screen and (max-width: 991px) {
+		padding-top: 9vw;
+	}
+	padding-bottom: 200px;
+	.circle {
+		@include circle(200px);
+	}
+	&:after {
+		padding: 0;
+		width: 100%;
+		height: 80%;
+		content: "";
+		display: block;
+		position: absolute;
+		@media screen and (max-width: 620px) {
+			top: 5%;
+		}
+		@media screen and (min-width: 621px) {
+			top: 30%;
+		}
+		@media screen and (min-width: 992px) {
+			background: inherit;
+		}
+		@media screen and (max-width: 991px) {
+			background: $bkg_black;
+		}
+		z-index: -1;
+	}
+}
+.caption {
+	@media screen and (max-width: 991px) {
+		padding-top: 9vw;
+	}
+	@media screen and (min-width: 992px) {
+		padding-top: 14vw;
+	}
+	h1 {
+		font-size: 55px;
+		text: {
+			align: center;
+			decoration: underline;
+		}
+	}
+	p {
+		letter-spacing: 3px;
+		padding: 3% 10%;
+		text-align: justify;
+	}
+
+}
+main {
+	background: $bkg_black;
+	.heart-container {
+		@media screen and (min-width: 992px) {
+			padding: 75px;
+			padding-top: 150px;
+			padding-bottom: 0;
+		}
+		@media screen and (max-width: 992px) {
+			padding: 20px;
+			padding-bottom: 0;
+		}
+		padding-left: 50% !important;
+		padding-right: 50% !important;
+	}
+	.post {
+		width: 100%;
+		@media screen and (min-width: 992px) {
+			padding: 75px;
+			padding-top: 150px;
+		}
+		@media screen and (max-width: 992px) {
+			padding: 20px;
+		}
+		.post-title {
+			h1 {
+				margin-top: 5px;
+				margin-bottom: 25px;
+				font-size: 48px;
+				text-align: center;
+			}
+		}
+		.post-content {
+			p {
+				font-size: 18px;
+				text-align: justify;
+			}
+		}
+	}
+	
+}
+footer {
+	text-align: center;
+	bottom: 0;
+	background: $bkg_black;
+	width: 100%;
+	height: 170px;
+	p {
+		margin-top: 150px;
+	}
+}
