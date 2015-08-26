@@ -14,7 +14,6 @@ $(function(){
 				offset: "120px"
 			})
 				.setClassToggle("#heart", "zap")
-				.addIndicators({name: "heart"})
 				.addTo(controller);
 
 /*		.on("progress", function(e){
