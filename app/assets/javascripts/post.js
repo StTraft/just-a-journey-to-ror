@@ -9,6 +9,14 @@ $(function(){
 		})
 		.setTween(t)
 		.addTo(controller);
+	new ScrollMagic.Scene({
+				triggerElement: ".post",
+				offset: "120px"
+			})
+				.setClassToggle("#heart", "zap")
+				.addIndicators({name: "heart"})
+				.addTo(controller);
+
 /*		.on("progress", function(e){
 			$("nav").css("opacity", e.progress.toFixed(3)*0.5 + 0.5);
 		})
