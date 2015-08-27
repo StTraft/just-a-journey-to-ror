@@ -5,7 +5,7 @@
   .container-fluid
     .row#mas
       - @albums.each do |a|
-        .col-sm-4.col-md-3.no-gutter
+        .col-xs-4.col-md-3.no-gutter.masbox
           .imgbox
             = image_tag a.photos.shuffle.first.resource.url, class: 'img img-responsive'
             .album-title

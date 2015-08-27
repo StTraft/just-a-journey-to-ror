@@ -19,7 +19,8 @@ $(function(){
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 	};
-	if (!isMobile) {
+	alert(isMobile.Android());
+	//if (!isMobile) {
 		var controller = new ScrollMagic.Controller();
 		var t = new TimelineMax()
 			.fromTo(".background-image", 2, {y: "0%"}, {y: "62%", ease: Linear.easeOut});
@@ -36,7 +37,7 @@ $(function(){
 				})
 					.setClassToggle("#heart", "zap")
 					.addTo(controller);
-	}
+	//}
 /*		.on("progress", function(e){
 			$("nav").css("opacity", e.progress.toFixed(3)*0.5 + 0.5);
 		})
@@ -52,4 +53,11 @@ $(function(){
 		})
 		.setPin("nav")
 		.addTo(controller);*/
+	var $mas = $('#mas').masonry({
+		itemSelector: '.masbox'
+	});
+	$mas.imagesLoaded().progress( function(){
+		$mas.masonry('layout');
+	});
+
 });

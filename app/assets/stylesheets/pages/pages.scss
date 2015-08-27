@@ -170,7 +170,15 @@ main {
 			}
 		}
 	}
-	
+	.imgbox {
+		margin: 5px;
+		background: #4fe;
+		overflow: hidden;
+		border-radius: 5px;
+		img {
+			width: 100%;
+		}
+	}
 }
 footer {
 	text-align: center;
