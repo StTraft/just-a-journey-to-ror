@@ -18,20 +18,20 @@
                   = image_tag p.resource.url, alt: p.name, class: ''
               - else
                 .item
-                  = image_tag p.resource.url, alt: p.name, class: ""
+                  = image_tag p.resource.url, alt: p.name, class: ''
           / %a{class: 'left carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'prev'}
           /   %span{class: 'glyphicon glyphicon-chevron-left', :"aria-hidden" => true}
           /   %span{class: 'sr-only'} Previous
           / %a{class: 'right carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'next'}
           /   %span{class: 'glyphicon glyphicon-chevron-right', :"aria-hidden" => true}
           /   %span{class: 'sr-only'} Next
-      .col-sm-6
-        .carousel.slide{data: {ride: 'carousel'}}
+      .col-xs-6
+        .l-button.carousel.slide{data: {ride: 'carousel'}}
           %a{class: 'left carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'prev'}
             %span{class: 'glyphicon glyphicon-chevron-left', :"aria-hidden" => true}
             %span{class: 'sr-only'} Previous
-      .col-sm-6
-        .carousel.slide{data: {ride: 'carousel'}}
+      .col-xs-6
+        .r-button.carousel.slide{data: {ride: 'carousel'}}
           %a{class: 'right carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'next'}
             %span{class: 'glyphicon glyphicon-chevron-right', :"aria-hidden" => true}
             %span{class: 'sr-only'} Next

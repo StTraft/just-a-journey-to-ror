@@ -71,6 +71,10 @@ $font_white: rgb(253,254,252);
 			 -o-transform-origin: $func; 
 					transform-origin: $func; 	
 }
+@mixin link-properties {
+	text-decoration: none;
+	color: inherit;
+}
 .zap {
 	-moz-transform: scale(1, 1) !important;
 	transform: scale(1, 1) !important;

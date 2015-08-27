@@ -180,16 +180,40 @@ main {
 		}
 		a {
 			color: inherit;
+			p {
+				@include link-properties;
+				&:link, &:visited, &:hover, &:active {
+					@include link-properties;
+				}
+			}
 		}
-		&:hover {
-			text-decoration: none;
-			color: inherit;
+		&:link {
+			@include link-properties;
 		}
 		&:visited {
-			text-decoration: none;
-			color: inherit;			
+			@include link-properties;
+		}
+		&:hover {
+			@include link-properties;
+		}
+		&:active {
+			@include link-properties;			
 		}
 	}
+}
+#photo-show {
+	width: 100%;
+	height: 48vw;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+.l-button, .r-button {
+	width: 100%;
+	height: 12vw;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 footer {
 	text-align: center;
