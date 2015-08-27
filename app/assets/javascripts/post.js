@@ -19,7 +19,7 @@ $(function(){
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 	};
-	alert(isMobile.Android());
+	console.log(isMobile.any());
 	//if (!isMobile) {
 		var controller = new ScrollMagic.Controller();
 		var t = new TimelineMax()
@@ -59,5 +59,6 @@ $(function(){
 	$mas.imagesLoaded().progress( function(){
 		$mas.masonry('layout');
 	});
+	$('#photo-show').carousel();
 
 });

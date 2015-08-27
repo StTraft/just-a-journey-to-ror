@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   put 'posts/update', to: 'posts#update', as: 'posts/update'
 
   get 'album/', to: 'album#index'
+  get 'album/:id', to: 'album#show', as: 'album/show'
 
   root to: 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.

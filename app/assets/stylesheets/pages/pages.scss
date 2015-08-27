@@ -178,6 +178,17 @@ main {
 		img {
 			width: 100%;
 		}
+		a {
+			color: inherit;
+		}
+		&:hover {
+			text-decoration: none;
+			color: inherit;
+		}
+		&:visited {
+			text-decoration: none;
+			color: inherit;			
+		}
 	}
 }
 footer {

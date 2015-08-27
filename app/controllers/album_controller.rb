@@ -4,6 +4,7 @@ class AlbumController < ApplicationController
 	end
 
 	def show
-		@album = Album.find_by(params[:name])
+		@album = Album.find(params[:id])
+		@photos = @album.photos
 	end
 end

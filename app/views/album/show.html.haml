@@ -1,1 +1,37 @@
-%h This is Album#show.
+%main
+  .post
+    .post-title
+      %h1= @album.name
+    .container-fluid
+      .col-sm-12
+        #photo-show.carousel.slide{data: {ride: 'carousel'}}
+          / Indicators
+          %ol{class: 'carousel-indicators'}
+            - @photos.each_with_index do |p, index|
+              %li.active{data: {target: '#photo-show', :"slide-to" => "#{index}"}}
+
+          / Wrapper
+          %div{class: 'carousel-inner', role: 'listbox'}
+            - @photos.each_with_index do |p, index|
+              - if index == 1
+                .item.active
+                  = image_tag p.resource.url, alt: p.name, class: ''
+              - else
+                .item
+                  = image_tag p.resource.url, alt: p.name, class: ""
+          / %a{class: 'left carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'prev'}
+          /   %span{class: 'glyphicon glyphicon-chevron-left', :"aria-hidden" => true}
+          /   %span{class: 'sr-only'} Previous
+          / %a{class: 'right carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'next'}
+          /   %span{class: 'glyphicon glyphicon-chevron-right', :"aria-hidden" => true}
+          /   %span{class: 'sr-only'} Next
+      .col-sm-6
+        .carousel.slide{data: {ride: 'carousel'}}
+          %a{class: 'left carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'prev'}
+            %span{class: 'glyphicon glyphicon-chevron-left', :"aria-hidden" => true}
+            %span{class: 'sr-only'} Previous
+      .col-sm-6
+        .carousel.slide{data: {ride: 'carousel'}}
+          %a{class: 'right carousel-control', href: '#photo-show', role: 'button', :"data-slide" => 'next'}
+            %span{class: 'glyphicon glyphicon-chevron-right', :"aria-hidden" => true}
+            %span{class: 'sr-only'} Next
