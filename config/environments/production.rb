@@ -76,4 +76,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #paperclip storage options - only access dropbox in production env
+  PAPERCLIP_STORAGE_OPTS = {
+    styles: { medium: '300x300>', thumb: '100x100>' },
+    storage: :dropbox,
+    dropbox_credentials: Rails.root.join("config/dropbox.yml"),
+    dropbox_options: {environment: ENV["RACK_ENV"]},
+    path: ":class/:attachment/:id_partition/:style/:id_:filename"
 end
