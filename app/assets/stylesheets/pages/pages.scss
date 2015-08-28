@@ -213,6 +213,10 @@ main {
 	.item {
 		padding: 5px;
 	}
+	.synced {
+		border: $btn_color solid 2px;
+		border-radius: 3px;
+	}
 }
 .item-show {
 	width: 100%;

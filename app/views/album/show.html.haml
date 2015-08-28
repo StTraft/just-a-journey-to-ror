@@ -13,4 +13,4 @@
           .owl-carousel
             - @photos.each do |p|
               .item
-                = image_tag p.resource.url, alt: p.name, class: 'img img-responsive'
+                = image_tag p.resource.url(:medium), alt: p.name, class: 'img img-responsive'

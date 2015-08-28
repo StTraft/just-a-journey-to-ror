@@ -35,7 +35,7 @@ gem 'simple_form'
 
 #image
 gem 'paperclip', '~> 4.3'
-
+gem 'paperclip-dropbox', '>= 1.1.7'
 
 # owl carousel
 gem 'owlcarousel-rails'
