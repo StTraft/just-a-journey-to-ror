@@ -170,8 +170,55 @@ main {
 			}
 		}
 	}
-	
+	.imgbox {
+		margin: 5px;
+		background: #4fe;
+		overflow: hidden;
+		border-radius: 5px;
+		img {
+			width: 100%;
+		}
+		a {
+			color: inherit;
+			p {
+				@include link-properties;
+				&:link, &:visited, &:hover, &:active {
+					@include link-properties;
+				}
+			}
+		}
+		&:link {
+			@include link-properties;
+		}
+		&:visited {
+			@include link-properties;
+		}
+		&:hover {
+			@include link-properties;
+		}
+		&:active {
+			@include link-properties;			
+		}
+	}
 }
+#photo-show {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+.owl-carousel {
+	.item {
+		padding: 5px;
+	}
+}
+.item-show {
+	width: 100%;
+	height: 48vw;
+}
+
 footer {
 	text-align: center;
 	bottom: 0;

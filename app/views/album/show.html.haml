@@ -1,0 +1,16 @@
+%main
+  .post
+    .post-title
+      %h1= @album.name
+    .container-fluid
+      .row
+        .col-sm-12
+          #photo-show
+            - @photos.each do |p|
+              .item.item-show
+                = image_tag p.resource.url, alt: p.name, class: 'img img-responsive'
+        .col-sm-12
+          .owl-carousel
+            - @photos.each do |p|
+              .item
+                = image_tag p.resource.url, alt: p.name, class: 'img img-responsive'

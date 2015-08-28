@@ -12,5 +12,7 @@
  *
  *= require_self
  *= depends_on ./stylesheets/base/base.scss
+ *= require owl.carousel
+ *= require owl.theme
  *= require_tree ./pages
  */
