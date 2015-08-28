@@ -17,16 +17,11 @@ Post.create(title: 'Even The smallest person can change the course of the future
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh.
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh.
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum et diam sed tincidunt. Duis volutpat sit amet est eget mollis. Aenean lobortis et metus id pharetra. Suspendisse quis odio laoreet, tincidunt odio eget, tincidunt nibh.")
-
-(1..10).each do |i|
-	album = Album.create(name: "album_#{i}")
-	album.photos << Photo.create(name: 'photo_1', resource: File.open('app/assets/images/test.jpg', 'rb'))
-	album.photos << Photo.create(name: 'photo_2', resource: File.open('app/assets/images/1.jpg', 'rb'))
-	album.photos << Photo.create(name: 'photo_3', resource: File.open('app/assets/images/2.jpg', 'rb'))
-	album.photos << Photo.create(name: 'photo_4', resource: File.open('app/assets/images/3.png', 'rb'))
-	album.photos << Photo.create(name: 'photo_5', resource: File.open('app/assets/images/4.png', 'rb'))
+(1..10).each do |j|
+	album = Album.create(name: "Demonstration_#{j}")
+	(1..15).each do |i|
+		album.photos << Photo.create(name: "photo_#{i}", resource: File.open("app/assets/images/photo_#{i}.jpg", 'rb'))
+	end
+	album.photos << Photo.create(name: "photo_16", resource: File.open("app/assets/images/photo_16.png", 'rb'))
 end
-
-
-
 
