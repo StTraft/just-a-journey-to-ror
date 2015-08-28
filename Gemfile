@@ -36,6 +36,10 @@ gem 'simple_form'
 #image
 gem 'paperclip', '~> 4.3'
 
+
+# owl carousel
+gem 'owlcarousel-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

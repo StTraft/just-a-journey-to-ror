@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require TimelineMax.min.js
 //= require ScrollMagic.min.js
+//= require owl.carousel
 //= require_tree .

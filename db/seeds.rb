@@ -23,6 +23,8 @@ Post.create(title: 'Even The smallest person can change the course of the future
 	album.photos << Photo.create(name: 'photo_1', resource: File.open('app/assets/images/test.jpg', 'rb'))
 	album.photos << Photo.create(name: 'photo_2', resource: File.open('app/assets/images/1.jpg', 'rb'))
 	album.photos << Photo.create(name: 'photo_3', resource: File.open('app/assets/images/2.jpg', 'rb'))
+	album.photos << Photo.create(name: 'photo_4', resource: File.open('app/assets/images/3.png', 'rb'))
+	album.photos << Photo.create(name: 'photo_5', resource: File.open('app/assets/images/4.png', 'rb'))
 end
 
 
