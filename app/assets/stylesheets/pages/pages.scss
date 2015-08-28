@@ -215,6 +215,12 @@ main {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
+a.carousel-control.left {
+	background-image: none;
+}
+a.carousel-control.right {
+	background-image: none;
+}
 footer {
 	text-align: center;
 	bottom: 0;

@@ -59,6 +59,11 @@ $(function(){
 	$mas.imagesLoaded().progress( function(){
 		$mas.masonry('layout');
 	});
-	$('#photo-show').carousel();
+
+	// photo show carousel related
+	$('#photo-show').carousel({
+		interval: 10000
+	});
+
 
 });
