@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :masters
 
 
-  get 'posts/edit', to: 'posts#edit'
+  get 'posts/edit', to: 'posts#edit', as: 'post/edit'
   get 'posts/:id/edit', to: 'master#edit'
   put 'posts/update', to: 'posts#update', as: 'posts/update'
 
