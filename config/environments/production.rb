@@ -84,4 +84,5 @@ Rails.application.configure do
     dropbox_credentials: Rails.root.join("config/dropbox.yml"),
     dropbox_options: {environment: ENV["RACK_ENV"]},
     path: ":class/:attachment/:id_partition/:style/:id_:filename"
+  }
 end
