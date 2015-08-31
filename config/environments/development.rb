@@ -38,4 +38,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # paperclip storage option:
+  PAPERCLIP_STORAGE_OPTS = {
+    styles: { medium: '300x300>', thumb: '100x100>' }
+  }
 end

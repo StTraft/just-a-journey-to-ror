@@ -10,10 +10,5 @@
     = csrf_meta_tags
   %body
     = render 'layouts/header'
-    .container-fluid
-      .row
-        .col-sr-12.col-md-10.col-md-offset-1
-          = yield
+    = yield
     = render 'layouts/footer'
-
-    

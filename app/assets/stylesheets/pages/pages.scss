@@ -172,11 +172,17 @@ main {
 	}
 	.imgbox {
 		margin: 5px;
-		background: #4fe;
+		background: $font_grey;
 		overflow: hidden;
 		border-radius: 5px;
 		img {
 			width: 100%;
+		}
+		.album-title {
+			text-align: left;
+			padding-left: 10px;
+			padding-top: 5px;
+			padding-bottom: 5px;
 		}
 		a {
 			color: inherit;
