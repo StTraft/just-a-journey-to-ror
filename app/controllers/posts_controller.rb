@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :authenticate_user!, only: [:edit, :update, :new, :create, :destroy]
 	def index
 		@post = Post.first
 	end
