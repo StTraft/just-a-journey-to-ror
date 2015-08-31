@@ -82,6 +82,6 @@ Rails.application.configure do
     styles: { medium: '300x300>', thumb: '100x100>' },
     storage: :dropbox,
     dropbox_credentials: Rails.root.join("config/dropbox.yml"),
-    dropbox_options: {environment: 'development'},
+    dropbox_options: {environment: ENV["RACK_ENV"]},
     path: ":class/:attachment/:id_partition/:style/:id_:filename"
 end
