@@ -18,3 +18,7 @@
 
 # Ignore Paperclip files
 public/system/
+
+# Ignore yml files
+/config/*.yml
+
