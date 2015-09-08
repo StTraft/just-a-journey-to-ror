@@ -8,7 +8,7 @@
           .col-xs-4.col-md-3.no-gutter.masbox
             .imgbox
               = link_to album_show_path(id: a.id) do
-                = image_tag a.photos.shuffle.first.resource.url, class: 'img img-responsive'
+                = image_tag a.photos.shuffle.first.resource.url(:medium), class: 'img img-responsive'
                 .album-title
                   %p= a.name
 
