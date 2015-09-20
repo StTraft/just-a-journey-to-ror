@@ -4,9 +4,9 @@
 	$.fn.rainbow = function(options) {
 		// func options
 		var settings = $.extend({
-			repeat: 1,
 			phaseShift: 2,
-			color: '#888888'
+			brightness: 128,
+			steps: 0
 		}, options);
 
 
@@ -22,32 +22,34 @@
 			for (var i = 1; i < hexStr.length; i += 2) {
 				rgb[(i-1)/2] = parseInt(hexStr.substring(i,i+2), 16);
 			}
-			return rgb;
+			return rgb;  // array
 		}
 
 		// constant
-		var offset = _hex2dec(settings.color);
-		var amp = 127;
+		var ps = settings.phaseShift;
+		var brightness = settings.brightness;
+		var amp = 255 - brightness;
+		var _2pi = 2 * Math.PI;
 
-		offset = [128,128,128];
+
 
 		return this.each(function(){
 			// func body goes here
 			var text = $(this).text().split("");
 			//var color = _genColorString(10,10,10); // this is use to drive the change in color
 			var color = settings.color;
-			var ca = _hex2dec(color); // array: [r, g, b]
+			var ca = []; // array: [r, g, b]
 			var str = '';
-			var frequency = Math.PI * 2 / text.length / settings.repeat;
-			var ps = settings.phaseShift;
+			//var frequency = settings.frequency || _2pi / text.length;
+			var frequency = (settings.steps) ? _2pi / settings.steps : _2pi / text.length;
 
 			for (var i = 0; i < text.length; i++) {
 				for (var j = 0; j < 3; j++) {
-					ca[j] = Math.sin(frequency * i + ps * j ) * amp + offset[j];
+					ca[j] = Math.sin(frequency * i + ps * j ) * amp + brightness; // need to tryout using original color as start
 					ca[j] = Math.abs(Math.round( ca[j]) );
 				}
 				color = _genColorString(ca);
-				str += '<font style="color:'+color+';">'+text[i]+'</font>';
+				str += '<font style="color:'+color+';" rgb="'+ ca[0]+','+ca[1]+','+ca[2] +'">'+text[i]+'</font>';
 			}
 			$(this).html(str);
 		});
