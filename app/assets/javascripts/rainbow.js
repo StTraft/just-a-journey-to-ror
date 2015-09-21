@@ -1,3 +1,16 @@
+        ////////////////////////////////////////////////////////////
+       //                                                        //
+      // //////   /////  //// ///   // /////    /////  //    // //
+     // //   // //   //  //  // /  // //   // //   // //    // //
+    // //////  ///////  //  //  / // /////   //   // // // // //
+   // //   // //   //  //  //   /// //   // //   // // // // //
+  // //   // //   // //// //    // //////   /////    // //  //
+ //                                                        //
+////////////////////////////////////////////////////////////
+// Rainbow ver 0.0.1a
+// author: Gordon Yip
+// licence: MIT
+
 (function($){
 	'use strict';
 
@@ -6,7 +19,9 @@
 		var settings = $.extend({
 			phaseShift: 2,
 			brightness: 128,
-			steps: null
+			steps: null,
+			animate: true,
+			period: 3
 		}, options);
 
 		// constant
@@ -14,15 +29,16 @@
 		var brightness = settings.brightness;
 		var amp = 255 - brightness;
 		var _2pi = 2 * Math.PI;
-		
-		
-
+		var _period = (settings.period > 0) ? settings.period : 0;
 
 		var _genColorString = function (array) {
-			var rs = (array[0].toString(16).length == 1) ? '0' + array[0].toString(16) : array[0].toString(16);
-			var gs = (array[1].toString(16).length == 1) ? '0' + array[1].toString(16) : array[1].toString(16);
-			var bs = (array[2].toString(16).length == 1) ? '0' + array[2].toString(16) : array[2].toString(16);
-			return '#' + rs + gs + bs;		
+			var a = [3];
+			for (var i=0; i<3; i++)
+				a[i] = _subGenCS(array[i]);
+			return '#' + a[0] + a[1] + a[2];		
+		}
+		var _subGenCS = function(v) {
+			return (v.toString(16).length == 1) ? '0' + v.toString(16) : v.toString(16);
 		}
 
 		var _hex2dec = function (hexStr) {
@@ -47,50 +63,40 @@
 			var a = arr;
 			var kfs = '\@keyframes '+name+'{';
 			for (var i = 0; i < n; i++) {
-				kfs += Math.round(i*10000/n)/100 + '% {color: '+ a[i] +';} '
+				kfs += Math.round(i*10000/n)/100 + '%{color:'+ a[i] +';}'
 			}
-			kfs += '100% {color: '+a[0]+'} }';
+			kfs += '100%{color:'+a[0]+'}}';
 			return kfs;
 		}
-
-
 
 		return this.each(function(index, element){
 			// func body goes here
 			var text = $(this).text().split("");
-			var ca = []; // array: [r, g, b]
+			var ca = [];
 			var colorArray = [];
 			var str = '';
 			var _class = '<style type="text/css">';
 			var frequency = (settings.steps) ? _2pi / settings.steps : _2pi / text.length;
+			var period = Math.round(_period*100 / text.length)/10;
 
 			for (var i = 0; i < text.length; i++) {
 				for (var j = 0; j < 3; j++) {
-					ca[j] = Math.sin(frequency * i + ps * j ) * amp + brightness; // need to tryout using original color as start
+					ca[j] = Math.sin(frequency * i + ps * j ) * amp + brightness;
 					ca[j] = Math.abs(Math.round( ca[j]) );
 				}
 				colorArray[i] = _genColorString(ca);
-				_class += '._r_e'+ index + '_c' + i + '{color:'+ _genColorString(ca) +';animation: '+'r_kf_'+index+'c_'+i+' 1s infinite;}';
+				_class += '._r_e'+ index + '_c' + i + '{color:'+ _genColorString(ca);
+				_class += (settings.animate) ? ';animation:'+'r_kf_'+index+'c_'+i+' '+ period + 's linear infinite;}' : ';}';
 				str += '<font class="_r_e'+ index + '_c'+ i +'">'+text[i]+'</font>';
 			}
-			for (var i = 0; i < text.length; i++ ) {
-				_class += _keyframes(_rotate(colorArray, i), 'r_kf_'+index+'c_'+i);
-			}
+			if (settings.animate)
+				for (var i = 0; i < text.length; i++ ) 
+					_class += _keyframes(_rotate(colorArray, i), 'r_kf_'+index+'c_'+i);
 			_class += '</style>';
 			
 			$('head').append(_class);
 			$(this).html(str);
 
-
-			//console.log( _keyframes(colorArray, 'rainbow_kf_'+index) );
-			console.log(_class);
-
-
 		});
-
 	}
-
-
-
 }(jQuery));
-
