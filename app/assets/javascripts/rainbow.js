@@ -6,8 +6,16 @@
 		var settings = $.extend({
 			phaseShift: 2,
 			brightness: 128,
-			steps: 0
+			steps: null
 		}, options);
+
+		// constant
+		var ps = settings.phaseShift;
+		var brightness = settings.brightness;
+		var amp = 255 - brightness;
+		var _2pi = 2 * Math.PI;
+		
+		
 
 
 		var _genColorString = function (array) {
@@ -25,22 +33,35 @@
 			return rgb;  // array
 		}
 
-		// constant
-		var ps = settings.phaseShift;
-		var brightness = settings.brightness;
-		var amp = 255 - brightness;
-		var _2pi = 2 * Math.PI;
+		var _rotate = function(a, t = 1) {
+			var array = a.slice(0);
+			while (t--) {
+				var temp = array.shift();
+				array.push(temp);
+			}
+			return array;
+		}
+
+		var _keyframes = function(arr, name) {
+			var n = arr.length;
+			var a = arr;
+			var kfs = '\@keyframes '+name+'{';
+			for (var i = 0; i < n; i++) {
+				kfs += Math.round(i*10000/n)/100 + '% {color: '+ a[i] +';} '
+			}
+			kfs += '100% {color: '+a[0]+'} }';
+			return kfs;
+		}
 
 
 
-		return this.each(function(){
+		return this.each(function(index, element){
 			// func body goes here
 			var text = $(this).text().split("");
-			//var color = _genColorString(10,10,10); // this is use to drive the change in color
-			var color = settings.color;
 			var ca = []; // array: [r, g, b]
+			var colorArray = [];
 			var str = '';
-			//var frequency = settings.frequency || _2pi / text.length;
+			var _class = '<style type="text/css">';
 			var frequency = (settings.steps) ? _2pi / settings.steps : _2pi / text.length;
 
 			for (var i = 0; i < text.length; i++) {
@@ -48,13 +69,28 @@
 					ca[j] = Math.sin(frequency * i + ps * j ) * amp + brightness; // need to tryout using original color as start
 					ca[j] = Math.abs(Math.round( ca[j]) );
 				}
-				color = _genColorString(ca);
-				str += '<font style="color:'+color+';" rgb="'+ ca[0]+','+ca[1]+','+ca[2] +'">'+text[i]+'</font>';
+				colorArray[i] = _genColorString(ca);
+				_class += '._r_e'+ index + '_c' + i + '{color:'+ _genColorString(ca) +';animation: '+'r_kf_'+index+'c_'+i+' 1s infinite;}';
+				str += '<font class="_r_e'+ index + '_c'+ i +'">'+text[i]+'</font>';
 			}
+			for (var i = 0; i < text.length; i++ ) {
+				_class += _keyframes(_rotate(colorArray, i), 'r_kf_'+index+'c_'+i);
+			}
+			_class += '</style>';
+			
+			$('head').append(_class);
 			$(this).html(str);
+
+
+			//console.log( _keyframes(colorArray, 'rainbow_kf_'+index) );
+			console.log(_class);
+
+
 		});
+
 	}
 
 
 
 }(jQuery));
+
