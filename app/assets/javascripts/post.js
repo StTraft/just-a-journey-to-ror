@@ -132,6 +132,6 @@ $(function(){
     
   }
  
-  $(".caption h1").rainbow(); 
+  //$(".caption h1").rainbow(); 
 
 });
