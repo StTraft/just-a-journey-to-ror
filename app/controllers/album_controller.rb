@@ -2,7 +2,7 @@ class AlbumController < ApplicationController
 	before_action :authenticate_user!, only: [:edit, :update, :new, :create, :destroy]
 
 	def index
-		@albums = Album.all
+		@albums = Album.all.eager_load(:photos)
 	end
 
 	def show
